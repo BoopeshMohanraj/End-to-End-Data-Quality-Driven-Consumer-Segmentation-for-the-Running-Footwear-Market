@@ -1,4 +1,4 @@
-# Running-Shoe Consumer Segmentation (Unsupervised ML)
+# End-to-End Consumer Segmentation for the Running-Footwear Market (Unsupervised ML)
 
 Segmenting running-shoe consumers from survey data using unsupervised machine learning, to surface distinct customer groups and translate them into product and marketing recommendations. The workflow compares several clustering algorithms, selects one suited to the data, and profiles the resulting segments.
 
@@ -23,7 +23,7 @@ The data was clean (no missing or duplicate records/IDs).
 
 **1. Exploratory analysis**
 - Correlation heatmap across the response features
-- **Cosine similarity** matrix between respondents — chosen deliberately because the data is binary, where cosine similarity compares response *patterns* better than Euclidean distance
+- **Cosine similarity** matrix between respondents - chosen deliberately because the data is binary, where cosine similarity compares response *patterns* better than Euclidean distance
 - Outlier check via boxplot on scaled data (few outliers; minimal impact)
 
 **2. Choosing a clustering method**
@@ -49,7 +49,7 @@ Four algorithms were compared — **KMeans, Gaussian Mixture (GMM), Agglomerativ
 
 ![GMM vs. Hierarchical clustering in PCA space](figures/cluster_comparison_pca.png)
 
-*The two methods projected onto the first two principal components. GMM (left) yields more evenly distributed, separable groups; Hierarchical (right) forms tighter but more overlapping boundaries — which is why GMM was preferred for actionable segmentation.*
+*The two methods projected onto the first two principal components. GMM (left) yields more evenly distributed, separable groups; Hierarchical (right) forms tighter but more overlapping boundaries - which is why GMM was preferred for actionable segmentation.*
 
 ---
 
@@ -85,7 +85,7 @@ From these, the project derives product recommendations (a "simple & versatile" 
 
 - **Small sample.** 175 respondents is enough for a segmentation exercise but limits how confidently the segments generalize to the broader market.
 - **Survey / self-report data.** Stated preferences are not observed purchase behavior; the segments describe attitudes, not verified buying patterns.
-- **Cluster count.** The method-selection silhouette scores were computed at k=4, while the final GMM used 8 components for richer profiling — the 8-segment solution is chosen for interpretability rather than a single optimal-k metric.
+- **Cluster count.** The method-selection silhouette scores were computed at k=4, while the final GMM used 8 components for richer profiling - the 8-segment solution is chosen for interpretability rather than a single optimal-k metric.
 - **No external validation.** Segments are validated by internal cohesion and interpretability, not against real marketing-response outcomes.
 
 ---
